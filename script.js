@@ -127,6 +127,14 @@ const slides = [
             "images/zagreb2/3.jpg",
         ],
         text: "Izlet v Zagreb 🇭🇷"
+    },
+    {
+        images: [
+            "images/praksa/1.jpg",
+            "images/praksa/2.jpg",
+            "images/praksa/3.jpg",
+        ],
+        text: "Delovna praksa 🛠️"
     },*/
     {
         images: [
@@ -143,14 +151,6 @@ const slides = [
             "images/stem-teden2/3.jpg",
         ],
         text: "STEM teden 🔭"
-    },
-    {
-        images: [
-            "images/praksa/1.jpg",
-            "images/praksa/2.jpg",
-            "images/praksa/3.jpg",
-        ],
-        text: "Delovna praksa 🛠️"
     },
     {
         images: [
@@ -184,7 +184,14 @@ const slides = [
         ],
         text: "Tečaj VR programiranja 🥽"
     },
-
+    {
+        images: [
+            "images/ruse/1.jpg",
+            "images/ruse/2.jpg",
+            "images/ruse/3.jpg",
+        ],
+        text: "Obisk dijakov iz Ruš 🇸🇮"
+    },
 ];
 
 let currentSlide = 0;
