@@ -109,7 +109,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 45px 0 30px;
+      padding: 40px 0 30px;
     }
 
     .slideshow {
@@ -289,10 +289,11 @@
     }
 
     .progress-container {
-      flex: 1;
+      flex: none;
+      width: 60%;
       max-width: 650px;
       height: 3px;
-      background: #c4c7cd;
+      background: #c4c5c6;
       overflow: hidden;
       border-radius: 10px;
     }
@@ -301,6 +302,7 @@
       width: 0%;
       height: 100%;
       background: var(--accent);
+      transition: none;
     }
 
     .progress-bar.running {
@@ -471,8 +473,7 @@
       <!-- SLIDE 1 -->
       <section class="slide active" aria-label="Slide 1 of 3">
         <div class="image-wrap">
-          <img
-            src="https://i.ibb.co/5hpwjkB6/kokol.jpg">
+          <img src="https://i.ibb.co/5hpwjkB6/kokol.jpg">
           <div class="image-number">22. 10.</div>
         </div>
 
@@ -572,15 +573,18 @@
 
     // ---------- PROGRESS BAR ----------
     function startProgress() {
-      progress.classList.remove("running");
+  progress.style.transition = "none";
+  progress.style.width = "0%";
 
-      // Restart the CSS animation.
-      void progress.offsetWidth;
+  // Force the browser to apply the reset.
+  void progress.offsetWidth;
 
-      progress.style.animationDuration = remaining + "ms";
-      progress.style.animationPlayState = "running";
-      progress.classList.add("running");
-    }
+  // Animate the bar across the slide duration.
+  progress.style.transition =
+    `width ${remaining}ms linear`;
+
+  progress.style.width = "100%";
+}
 
     // ---------- DISPLAY SLIDE ----------
     function showSlide(index) {
@@ -597,11 +601,11 @@
         String(currentIndex + 1).padStart(2, "0");
 
       remaining = SLIDE_DURATION;
-      progress.style.width = "0%";
+progress.style.width = "0%";
 
-      if (!isPaused) {
-        scheduleNext();
-      }
+if (!isPaused) {
+  scheduleNext();
+}
     }
 
     // ---------- AUTO-ADVANCE ----------
