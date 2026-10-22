@@ -14,7 +14,7 @@
       --text: #000000;
       --muted: #000000;
       --accent: #036269;
-      --duration: 8s;
+      --duration: 8.3s;
     }
 
     * {
@@ -73,7 +73,8 @@
 
     /* ---------- HEADER / LOGO ---------- */
     header {
-      height: 100px;
+      height: 130px;
+      padding-top: 25px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -89,8 +90,8 @@
 
     .logo img {
       display: block;
-      max-width: 220px;
-      max-height: 65px;
+      max-width: 300px;
+      max-height: 85px;
       width: auto;
       height: auto;
       object-fit: contain;
@@ -514,7 +515,7 @@
 
         <div class="content">
           <div class="eyebrow">sobota, 24. oktober — 10.00-12.00</div>
-          <h1><span>Znanstveno tehnološki</span><br>sejem</h1>
+          <h1><span>Tehniško znanstveni</span><br>sejem</h1>
           <p class="description">
             Lahko boste izvedli eksperimente v naših laboratorijih,
             prisluhnili znanstvenim predavanjem v slovenskem, italijanskem in angleškem jeziku, spoznali naše partnerje
@@ -573,18 +574,18 @@
 
     // ---------- PROGRESS BAR ----------
     function startProgress() {
-  progress.style.transition = "none";
-  progress.style.width = "0%";
+      progress.style.transition = "none";
+      progress.style.width = "0%";
 
-  // Force the browser to apply the reset.
-  void progress.offsetWidth;
+      // Force the browser to apply the reset.
+      void progress.offsetWidth;
 
-  // Animate the bar across the slide duration.
-  progress.style.transition =
-    `width ${remaining}ms linear`;
+      // Animate the bar across the slide duration.
+      progress.style.transition =
+        `width ${remaining}ms linear`;
 
-  progress.style.width = "100%";
-}
+      progress.style.width = "100%";
+    }
 
     // ---------- DISPLAY SLIDE ----------
     function showSlide(index) {
@@ -601,11 +602,11 @@
         String(currentIndex + 1).padStart(2, "0");
 
       remaining = SLIDE_DURATION;
-progress.style.width = "0%";
+      progress.style.width = "0%";
 
-if (!isPaused) {
-  scheduleNext();
-}
+      if (!isPaused) {
+        scheduleNext();
+      }
     }
 
     // ---------- AUTO-ADVANCE ----------
