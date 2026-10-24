@@ -34,19 +34,20 @@
       overflow: hidden;
     }
 
+
     .slideshow {
       width: 100%;
-      max-width: 1100px;
+      max-width: 900px;
+      height: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 22px;
+      justify-content: center;
+      gap: clamp(8px, 2vh, 18px);
     }
 
-    /* LOGO */
-
     .logo-container {
-      height: 100px;
+      height: clamp(45px, 10vh, 85px);
       width: 100%;
       display: flex;
       align-items: center;
@@ -55,28 +56,53 @@
     }
 
     .logo {
-      max-width: 240px;
-      max-height: 100px;
+      max-width: min(200px, 60vw);
+      max-height: 100%;
       width: auto;
       height: auto;
       object-fit: contain;
     }
 
-    /* MAIN PICTURE */
-
-
     .picture-frame {
       position: relative;
-      width: min(100%, 800px);
+      width: min(77%, 900px, 110vh);
       aspect-ratio: 4 / 3;
       height: auto;
-      flex: 0 0 auto;
+      flex: 0 1 auto;
+      min-height: 0;
       background: #10233a;
-      border: 1px solid rgba(255, 255, 255, 0.13);
-      border-radius: 18px;
+      border-radius: 14px;
       overflow: hidden;
       box-shadow: 0 22px 65px rgba(0, 0, 0, 0.35);
     }
+
+    .slide-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .caption {
+      flex-shrink: 0;
+      min-height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: clamp(16px, 2.5vw, 28px);
+      font-weight: 600;
+      padding: 0 10px;
+    }
+
+    .indicators {
+      flex-shrink: 0;
+    }
+
+    .progress-track {
+      flex-shrink: 0;
+    }
+
 
     .slide-image {
       display: block;
@@ -187,7 +213,7 @@
 
     <!-- LOGO: replace this URL with your PNG logo -->
     <div class="logo-container">
-      <img class="logo" src="logo.png" alt="Logo">
+      <img class="logo" src="https://i.ibb.co/MD7kN5Jq/ra-STEM-26-wht.png" alt="Logo">
     </div>
 
     <!-- MAIN 4:3 IMAGE -->
@@ -218,7 +244,7 @@
        EDIT ONLY THIS SECTION
        ================================================== */
 
-    const LOGO_URL = "https://example.com/logo.png";
+    const LOGO_URL = "https://i.ibb.co/MD7kN5Jq/ra-STEM-26-wht.png";
 
     const SLIDE_DURATION = 4000; // 4 seconds per slide
 
