@@ -275,7 +275,7 @@
         ]
       },
       {
-        caption: "Hvala za pomoč in sodelovanje ❤️",
+        caption: "Dijaki, hvala za pomoč in sodelovanje ❤️",
         images: [
           "https://i.ibb.co/FLGLJSsx/IMG-9770-Large.jpg",
           "https://i.ibb.co/FLGLJSsx/IMG-9770-Large.jpg",
@@ -289,6 +289,7 @@
        ================================================== */
 
 
+
     const imageElement = document.getElementById("slideImage");
     const captionElement = document.getElementById("caption");
     const progressBar = document.getElementById("progressBar");
@@ -297,17 +298,27 @@
 
     logoElement.src = LOGO_URL;
 
-    // Randomly select one image from each group, once per page load.
-    const selectedSlides = slides.map(slide => ({
-      image: slide.images[
-        Math.floor(Math.random() * slide.images.length)
-      ],
-      caption: slide.caption
-    }));
+    // Keep track of the currently selected pictures.
+    let selectedSlides = [];
 
     let currentSlide = 0;
     let slideStartTime = 0;
     let animationFrame;
+
+    // Select one random picture from every group.
+    // Called at startup and again after every complete cycle.
+    function selectRandomPictures() {
+      selectedSlides = slides.map(slide => {
+        const randomIndex = Math.floor(
+          Math.random() * slide.images.length
+        );
+
+        return {
+          image: slide.images[randomIndex],
+          caption: slide.caption
+        };
+      });
+    }
 
     function showSlide(index) {
       currentSlide = index;
@@ -320,24 +331,32 @@
       });
 
       slideStartTime = performance.now();
+      progressBar.style.width = "0%";
     }
 
     function updateProgress(now) {
       const elapsed = now - slideStartTime;
       const progress = Math.min(elapsed / SLIDE_DURATION, 1);
 
-      progressBar.style.width = `${progress * 100}%`;
+      progressBar.style.width = (progress * 100) + "%";
 
       if (elapsed >= SLIDE_DURATION) {
-        // Always advance in order: 1 → 2 → 3 → 4 → 5 → 1
-        const nextSlide = (currentSlide + 1) % selectedSlides.length;
-        showSlide(nextSlide);
+        if (currentSlide === selectedSlides.length - 1) {
+          // The fifth slide has finished.
+          // Pick new pictures for the next cycle.
+          selectRandomPictures();
+          showSlide(0);
+        } else {
+          // Continue in natural order: 1, 2, 3, 4, 5.
+          showSlide(currentSlide + 1);
+        }
       }
 
       animationFrame = requestAnimationFrame(updateProgress);
     }
 
-    // Start with slide 1.
+    // Initialize the slideshow.
+    selectRandomPictures();
     showSlide(0);
     animationFrame = requestAnimationFrame(updateProgress);
 
