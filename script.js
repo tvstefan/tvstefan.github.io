@@ -135,7 +135,7 @@ const slides = [
             "images/praksa/3.jpg",
         ],
         text: "Delovna praksa 🛠️"
-    },*/
+    },
     {
         images: [
             "images/stem-teden1/1.jpg",
@@ -191,6 +191,38 @@ const slides = [
             "images/ruse/3.jpg",
         ],
         text: "Obisk dijakov iz Ruš 🇸🇮"
+    },*/
+    {
+        images: [
+            "images/rastem-lab-e/1.jpg",
+            "images/rastem-lab-e/2.jpg",
+            "images/rastem-lab-e/3.jpg",
+        ],
+        text: "Osnovnošolci v laboratoriju ⚡"
+    },
+    {
+        images: [
+            "images/rastem-lab-b/1.jpg",
+            "images/rastem-lab-b/2.jpg",
+            "images/rastem-lab-b/3.jpg",
+        ],
+        text: "Osnovnošolci v laboratoriju 🧪"
+    },
+    {
+        images: [
+            "images/rastem-lab-m/1.jpg",
+            "images/rastem-lab-m/2.jpg",
+            "images/rastem-lab-m/3.jpg",
+        ],
+        text: "Osnovnošolci v laboratoriju ⚙️"
+    },
+    {
+        images: [
+            "images/rastem-sejem/1.jpg",
+            "images/rastem-sejem/2.jpg",
+            "images/rastem-sejem/3.jpg",
+        ],
+        text: "Tehniško-znanstveni sejem 🚀"
     },
 ];
 
