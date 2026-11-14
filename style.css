@@ -1,3 +1,4 @@
+
 /* ================================
    RESET
 ================================ */
@@ -15,18 +16,12 @@
 
 body {
     min-height: 100vh;
-
     font-family: Arial, Helvetica, sans-serif;
 
-    background: /*#192334;*/
-    
-        radial-gradient(
-            circle at top,
-            #263449 0%,
-            #111827 45%,
-            #080b12 100%
-        );
-        
+    background: radial-gradient(circle at top,
+        #263449 0%,
+        #111827 45%,
+        #080b12 100%);
 
     color: white;
 
@@ -35,30 +30,22 @@ body {
     align-items: center;
 }
 
-
-/* ================================
-   MAIN CONTAINER
-================================ */
-
 .page {
     width: 100%;
     max-width: 1400px;
-
     padding: 35px 40px;
 }
 
 
 /* ================================
-   HEADER
+   HEADER / LOGO
 ================================ */
 
 .header {
     width: 100%;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     margin-bottom: 35px;
 }
 
@@ -66,7 +53,6 @@ body {
     width: auto;
     max-width: 220px;
     max-height: 40px;
-
     object-fit: contain;
 
     filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.35));
@@ -77,43 +63,28 @@ body {
    PHOTO GRID
 ================================ */
 
-/*
-   IMPORTANT:
-
-   This creates exactly THREE columns.
-   The images will therefore always be
-   next to each other.
-*/
-
 .photo-grid {
     display: grid;
-
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-
-    gap: 24px;
-
-    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
 
 /* ================================
-   PHOTO CARD
+   PHOTO CARDS
 ================================ */
 
 .photo-card {
     position: relative;
-
     width: 100%;
-
-    /*
-       Portrait / vertical format
-    */
+    max-width: 425px;
     aspect-ratio: 4 / 5;
 
     overflow: hidden;
+    margin: 0 auto;
 
     border-radius: 20px;
-
     background: rgba(255, 255, 255, 0.08);
 
     box-shadow:
@@ -124,9 +95,6 @@ body {
         transform 0.5s ease,
         box-shadow 0.5s ease;
 }
-
-
-/* Slight hover effect */
 
 .photo-card:hover {
     transform: translateY(-5px);
@@ -142,11 +110,9 @@ body {
 ================================ */
 
 .photo-card img {
+    display: block;
     width: 100%;
     height: 100%;
-
-    display: block;
-
     object-fit: cover;
 
     transition:
@@ -160,28 +126,24 @@ body {
 ================================ */
 
 .description {
-    text-align: center;
-
-    margin-top: 30px;
-
     min-height: 45px;
+    margin-top: 30px;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    text-align: center;
 }
 
 .description p {
     font-size: clamp(20px, 1.8vw, 32px);
-
     font-weight: 500;
-
     letter-spacing: 0.3px;
 
     color: rgba(255, 255, 255, 0.95);
 
-    text-shadow:
-        0 3px 15px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
 }
 
 
@@ -191,38 +153,26 @@ body {
 
 .progress-container {
     width: 100%;
-
     height: 4px;
-
     margin-top: 25px;
 
     background: rgba(255, 255, 255, 0.15);
-
     border-radius: 10px;
-
     overflow: hidden;
 }
 
 .progress-bar {
+    width: 0%;
     height: 100%;
 
-    width: 0%;
-
     background: rgba(255, 255, 255, 0.9);
-
     border-radius: 10px;
 }
 
 
 /* ================================
-   SMALLER SCREENS
+   MOBILE
 ================================ */
-
-/*
-   IMPORTANT:
-   We DO NOT change the three columns
-   into one column here.
-*/
 
 @media (max-width: 700px) {
 
@@ -231,11 +181,6 @@ body {
     }
 
     .photo-grid {
-        /*
-           Still THREE columns
-        */
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-
         gap: 8px;
     }
 
