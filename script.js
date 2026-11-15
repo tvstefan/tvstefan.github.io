@@ -210,11 +210,11 @@ const slides = [
     },
     {
         images: [
-            "images/rim-2r-2/1.jpg",
-            "images/rim-2r-2/2.jpg",
-            "images/rim-2r-2/3.jpg",
+            "images/obisk-svedov-2/1.jpg",
+            "images/obisk-svedov-2/2.jpg",
+            "images/obisk-svedov-2/3.jpg",
         ],
-        text: "Dijaki drugih razredov v Rimu 🇮🇹"
+        text: "Obisk švedskih dijakov iz Örebra 🇸🇪"
     },
     {
         images: [
